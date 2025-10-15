@@ -1,0 +1,28 @@
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  profiles:
+    default: dev
+
+  application:
+    name: schedule_manager
+
+  servlet:
+    session:
+      cookie:
+        http-only: true
+        secure: true
+        same-site: Lax
+
+  data:
+    web:
+      pageable:
+        default-page-size: 10
+        max-page-size: 100
+
+  jpa:
+    open-in-view: false
+
+jwt:
+  secret:
+    key: ${JWT_SECRET_KEY}
